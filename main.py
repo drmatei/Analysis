@@ -7,6 +7,7 @@ q = int(input("Enter a number of additions for negative numbers: "))
 list = []
 j = 0
 
+# This structure calculates the sum the "normal" way
 for _ in range(0, 4):
     n = og_length * (2 ** j)
     i = 1
@@ -28,6 +29,8 @@ table = [
     [og_length * 8, 0, 0, list[3], math.exp(list[3])],
 ]
 
+
+# This structure calculates the sum with the changes to the order of summation
 k = 0
 for _ in range(0, 4):
     n = og_length * (2 ** k)
