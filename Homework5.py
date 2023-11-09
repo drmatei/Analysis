@@ -11,11 +11,11 @@ def derivative_of_convex_f(x: int):
 
 
 def nonconvex_f(x: int):
-    return x ** 3 - 3 * x
+    return x ** 3 - 2 * x
 
 
 def derivative_of_nonconvex_f(x: int):
-    return 3 * x ** 2 - 3
+    return 3 * x ** 2 - 2
 
 
 def gradient_descent_method(initial_x, learning_rate, iterations, convex):
@@ -33,7 +33,7 @@ def gradient_descent_method(initial_x, learning_rate, iterations, convex):
 
 
 def plot_function_and_path(x, func, path, title):
-    plt.plot(x, func(x), label='Function')  # Plot the function line
+    plt.plot(x, func(x), label='Function')
     plt.scatter(path, [func(xi) for xi in path], color='red', label='Gradient_Descent_Path')
     plt.xlabel('x')
     plt.ylabel('f(x)')
@@ -73,11 +73,11 @@ while True:
         plot_function_and_path(np.linspace(-5, 5, 100), convex_f, path, "Diverges with learning rate too big")
 
     elif user_choice == 4:
-        learning_rate = 0.1
+        learning_rate = 0.01
         x0 = 0.9
         iterations = 100
         path = gradient_descent_method(x0, learning_rate, iterations, False)
-        plot_function_and_path(np.linspace(-5, 5, 100), convex_f, path, "Stuck in a local function with a nonconvex f")
+        plot_function_and_path(np.linspace(-5, 5, 100), convex_f, path, "Stuck in a local function for a nonconvex f")
 
     elif user_choice == 5:
         print("Bye!!")
